@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 group :test do
   gem 'rspec-rails'
+  gem "codeclimate-test-reporter", group: :test, require: nil
 end
 
 group :development, :test do
