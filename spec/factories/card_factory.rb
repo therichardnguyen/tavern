@@ -8,5 +8,6 @@ FactoryGirl.define do
     health {rand(20)}
     text Faker::Lorem.sentence
     rarity {["Common", "Rare", "Epic", "Legendary"][rand(4)]}
+    version { "#{Faker::Number.digit}.#{Faker::Number.digit}.#{Faker::Number.digit}.#{Faker::Number.number(4)}" }
   end
 end
