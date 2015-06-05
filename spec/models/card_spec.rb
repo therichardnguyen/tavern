@@ -12,5 +12,8 @@ describe Card do
     it 'should require a :card_type' do
       expect(FactoryGirl.build(:card, card_type: "")).to_not be_valid
     end
+    it 'should require a :version' do
+      expect(FactoryGirl.build(:card, version: "")).to_not be_valid
+    end
   end
 end
