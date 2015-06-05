@@ -5,6 +5,8 @@ gem 'rails', '4.1.10'
 
 gem 'rails-api'
 
+gem 'bcrypt'
+
 gem 'sqlite3'
 
 group :test do
