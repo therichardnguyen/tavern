@@ -15,6 +15,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'factory_girl_rails'
   gem 'guard'
   gem 'guard-bundler'
