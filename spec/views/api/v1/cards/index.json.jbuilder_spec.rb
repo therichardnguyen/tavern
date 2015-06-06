@@ -22,7 +22,6 @@ def card_hash_builder(card)
     "set" => card.set,
     "text" => card.text,
     "card_type" => card.card_type,
-    "version" => card.version
   }
 end
 
