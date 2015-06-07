@@ -1,7 +1,16 @@
 require 'spec_helper'
-
 describe Api::V1::UploadController do
-  describe "#create" do
+  describe "Api::V1::UploadController::UploadParams" do
+    let(:json_file) {fixture_file_upload("files/controllers/api/v1/upload/valid_cards.json", "application/json")}
+    it "sanitizes the params" do
+      params = ActionController::Parameters.new(file: json_file, invalid_param: "invalid_value")
+      upload_params = Api::V1::UploadController::UploadParams.build params
+      puts upload_params
+      expect(upload_params).to eql(json_file)
+    end
+  end
+  
+  describe "#upload" do
     let(:json_file) {fixture_file_upload("files/controllers/api/v1/upload/valid_cards.json", "application/json")}
     let(:json_file_with_invalid_content) {fixture_file_upload("files/controllers/api/v1/upload/invalid_cards.json","application/json")}
     let(:non_json_file) {
@@ -14,7 +23,6 @@ describe Api::V1::UploadController do
       before { post :upload, file: json_file }
       subject { response.status }
       it { is_expected.to be 200 }
-
       it "creates the card(s)" do
         expect(Card.count).to eq 2
       end
@@ -24,7 +32,6 @@ describe Api::V1::UploadController do
       before { post :upload, file: json_file_with_invalid_content}
       subject { response.status }
       it { is_expected.to be 422 }
-      
       it "doesn't create the card(s)" do
         expect(Card.count).to eq 0
       end
