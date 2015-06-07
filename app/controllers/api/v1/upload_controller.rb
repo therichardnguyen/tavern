@@ -1,6 +1,13 @@
 class Api::V1::UploadController < ApplicationController
+  
+  class UploadParams
+    def self.build(params)
+      params.require(:file)
+    end
+  end
+  
   def upload
-    file_contents = contents_of_file(params[:file])
+    file_contents = contents_of_file(UploadParams.build(params))
     begin
       parsed_json = JSON.parse file_contents
     rescue
@@ -22,16 +29,10 @@ class Api::V1::UploadController < ApplicationController
   end
   
   private
-  def upload_params
-    params.require(:file)
-  end
-  
   def contents_of_file(file)
     contents = nil
     if file.respond_to? :read
       contents = file.read
-    elsif file.respond_to? :path
-      contents = File.read(file.path)
     else
       logger.error "Bad file_data: #{file.class.name}: #{file.inspect}"
     end
