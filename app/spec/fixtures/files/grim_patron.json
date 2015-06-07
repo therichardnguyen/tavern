@@ -1,0 +1,36 @@
+[
+  {
+    "id":"BRM_019",
+    "name":"Grim Patron",
+    "set":"Blackrock Mountain",
+    "type":"Minion",
+    "rarity":"Rare",
+    "cost":5,
+    "attack":3,
+    "health":3,
+    "text":"Whenever this minion survives damage, summon another Grim Patron.",
+    "flavor":"If you love getting your face punched, come to the Grim Guzzler!",
+    "artist":"Bobby Chiu",
+    "collectible":true,
+    "howToGet":"Unlocked by defeating The Grim Guzzler in Blackrock Depths.",
+    "howToGetGold":"Can be crafted after defeating The Grim Guzzler in Blackrock Depths."
+  },
+  {
+    "id":"BRM_034",
+    "name":"Blackwing Corruptor",
+    "set":"Blackrock Mountain",
+    "type":"Minion",
+    "faction":"Neutral",
+    "rarity":"Common",
+    "cost":5,
+    "attack":5,
+    "health":4,
+    "text":"<b>Battlecry</b>: If you're holding a Dragon, deal 3 damage.",
+    "flavor":"He got his name when he gave Blackwing some comic books and rock & roll records.",
+    "artist":"Greg Staples",
+    "collectible":true,
+    "howToGet":"Unlocked by defeating Maloriak in the Hidden Laboratory.",
+    "howToGetGold":"Can be crafted after defeating Maloriak in the Hidden Laboratory.",
+    "mechanics":["Battlecry"]
+  }
+]
