@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-Innkeep::Application.config.secret_token = 'a4bbc12a6b114df9246ea5dc2684d2bca45256a8976bea338da6769876273911448f54b67dd56a97f23a4f6ef472f8c0e5995110a055029cb624830df042bbc1'
+Tavern::Application.config.secret_token = ENV['SECRET_TOKEN']
